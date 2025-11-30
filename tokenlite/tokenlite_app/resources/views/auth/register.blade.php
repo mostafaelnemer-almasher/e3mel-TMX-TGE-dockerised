@@ -59,6 +59,9 @@ $check_users = \App\Models\User::count();
             <input type="email" placeholder="{{__('Your Email')}}" class="input-bordered{{ $errors->has('email') ? ' input-error' : '' }}" name="email" value="{{ old('email') }}"data-msg-required="{{ __('Required.') }}" data-msg-email="{{ __('Enter valid email.') }}" required>
         </div>
         <div class="input-item">
+            <input type="tel" placeholder="{{__('Mobile Number')}}" class="input-bordered{{ $errors->has('mobile') ? ' input-error' : '' }}" name="mobile" value="{{ old('mobile') }}" pattern="[0-9+\-\s()]{10,20}" data-msg-required="{{ __('Mobile number is required.') }}" data-msg-pattern="{{ __('Enter a valid mobile number (10-20 characters, digits + spaces/hyphens/parentheses allowed).') }}" required> <small class="form-text text-muted">e.g., +1 (123) 456-7890</small>
+        </div>
+        <div class="input-item">
             <input type="password" placeholder="{{__('Password')}}" class="input-bordered{{ $errors->has('password') ? ' input-error' : '' }}" name="password" id="password" minlength="6" data-msg-required="{{ __('Required.') }}" data-msg-minlength="{{ __('At least :num chars.', ['num' => 6]) }}" required>
         </div>
         <div class="input-item">

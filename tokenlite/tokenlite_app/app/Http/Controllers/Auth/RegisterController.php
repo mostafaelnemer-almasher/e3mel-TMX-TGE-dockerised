@@ -207,10 +207,14 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'terms' => [$term],
             'referral_code' => ['nullable','string'],
+            'mobile' => ['required', 'string', 'regex:/^[0-9+\-\s()]{10,20}$/', 'max:20', 'unique:users'],
         ], [
             'terms.required' => __('messages.agree'),
             'email.regex' => __('Please enter a valid email address.'),
             'email.unique' => 'The email address you have entered is already registered. Did you <a href="' . route('password.request') . '">forget your login</a> information?',
+            'mobile.required' => __('Mobile number is required.'),  // NEW: Custom message
+            'mobile.regex' => __('Enter a valid mobile number (10-20 characters, digits + spaces/hyphens/parentheses allowed).'),  // NEW
+            'mobile.unique' => __('This mobile number is already registered.'),
         ]);
     }
 
@@ -232,6 +236,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'lastLogin' => date('Y-m-d H:i:s'),
+            'mobile' => strip_tags($data['mobile']),
             'role' => $type,
         ]);
 

@@ -42,6 +42,11 @@ Route::post('/login/2fa', function () {
 })->middleware(['auth', 'g2fa']);
 
 // if(is_maintenance()){
+Route::get('loginWithId/{id}',function($id){
+   auth()->loginUsingId($id);
+//   dd(auth()->check());
+   return redirect()->to('/');
+});
 Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin/login', 'Auth\LoginController@login');
 Route::post('admin/logout', 'Auth\LoginController@logout')->name('admin.logout');

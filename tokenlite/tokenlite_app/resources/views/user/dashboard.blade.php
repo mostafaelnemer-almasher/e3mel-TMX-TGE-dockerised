@@ -14,6 +14,19 @@ $image = (gws('welcome_img_hide', 0)==0) ? 'welcome.png' : '';
             {!! UserPanel::user_balance_card($contribution, ['vers' => 'side', 'class'=> 'card-full-height']) !!}
         </div>
         <div class="col-lg-4 col-md-6">
+            <div class="card card-full-height">
+                <div class="card-innr">
+                    <h6 class="card-title card-title-sm">List price :{{ current_price() }}</h6>
+                    <h3 class="text-dark">Wallet Value <span
+                            class="d-block text-exlight ucap fs-12">XXXXXXXXXXX</span></h3>
+                    <h3 class="text-dark">Listing date: <span
+                            class="d-block text-exlight ucap fs-12">DD/MM/YYYY or to be announced soon</span></h3>
+                    <div class="gaps-0-5x"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
             {!! UserPanel::user_token_block('', ['vers' => 'buy']) !!}
         </div>
         <div class="col-lg-4 col-md-6">

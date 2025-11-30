@@ -31,7 +31,7 @@ class APIController extends Controller
         $base = (get_base_bonus($stage->id)) ? get_base_bonus($stage->id) : 0;
         $amount = (get_base_bonus($stage->id, 'amount')) ? get_base_bonus($stage->id, 'amount') : 0;
         $base_dt = ($base > 0) ? get_base_bonus($stage->id, 'base') : [];
-        
+
         $bonus_data = ['base' => $base];
         if ($base > 0) {
             $bonus_data['start'] = isset($base_dt->start_date) ? $base_dt->start_date->toDateTimeString() : $stage->start_date->toDateTimeString();
@@ -72,7 +72,7 @@ class APIController extends Controller
         $bonus_data = $this->bonus_data();
 
         $response_minimal = array(
-            'ico' => active_stage_status($stage),
+            'ico' => active_stage_stageatus($stage),
             'total' => $token_cur,
             'total_amount' => $token_amt,
             'sold' => $sold_cur,
@@ -89,7 +89,7 @@ class APIController extends Controller
             'hard' => $hard,
             'hard_amount' => $hard_amt,
         );
-        
+
         $response_full = array(
             'ico' => active_stage_status($stage),
             'total' => $token_cur,
@@ -123,7 +123,7 @@ class APIController extends Controller
             'success' => true,
             'response' => $response
         ];
-        
+
         return response()->json($data, 200, [], JSON_PRETTY_PRINT);
     }
 
@@ -176,7 +176,7 @@ class APIController extends Controller
             'success' => true,
             'response' => $prices_data
         ];
-        
+
         return response()->json($data, 200, [], JSON_PRETTY_PRINT);
     }
 }
