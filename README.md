@@ -1,6 +1,6 @@
-# Tokenminds Docker Template
+# TokenMinds Docker Template
 
-This is a templated Docker deployment for Tokenminds tokenlite that allows easy replication by just changing the project name.
+This is a templated Docker deployment for TokenMinds that allows easy replication by just changing the project name.
 
 ## Quick Setup
 
@@ -8,7 +8,7 @@ This is a templated Docker deployment for Tokenminds tokenlite that allows easy 
    ```bash
    ./setup.sh [PROJECT_NAME]
    ```
-   Example: `./setup.sh hcolla` or `./setup.sh jamid`
+   Example: `./setup.sh hcola` or `./setup.sh e3mel`
 
 2. **Build and run:**
    ```bash
@@ -49,6 +49,6 @@ If you prefer to set up manually:
 The application automatically configures the database connection. During installation:
 
 1. **Database Host**: `database`
-2. **Database Name**: `Tokenminds_tokenlite`
-3. **Database User**: `Tokenminds_tokenlite_user` 
-4. **Database Password**: `Tokenminds_tokenlite_password`
+2. **Database Name**: `tokenminds`
+3. **Database User**: `tokenminds_user` 
+4. **Database Password**: `tokenminds_password`

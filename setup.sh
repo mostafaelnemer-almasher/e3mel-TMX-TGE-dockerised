@@ -7,7 +7,7 @@ set -e
 
 # Get project name from argument or prompt user
 if [ -z "$1" ]; then
-    echo "Enter project name (e.g., jamid, hcolla): "
+    echo "Enter project name (e.g., e3mel, hcola): "
     read PROJECT_NAME
 else
     PROJECT_NAME="$1"
@@ -24,7 +24,7 @@ echo "Setting up TokenLite Docker environment for project: $PROJECT_NAME"
 # Copy .env.template to .env and set PROJECT_NAME
 if [ -f ".env.template" ]; then
     cp .env.template .env
-    sed -i "s/PROJECT_NAME=jamid/PROJECT_NAME=$PROJECT_NAME/g" .env
+    sed -i "s/PROJECT_NAME=hcola/PROJECT_NAME=$PROJECT_NAME/g" .env
     echo "Created .env file with PROJECT_NAME=$PROJECT_NAME"
 else
     echo "Warning: .env.template not found, creating basic .env file"

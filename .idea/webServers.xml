@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="55c98732-d188-4285-b6e3-64ba585b1587" name="token.e3-business.com">
+        <fileTransfer rootFolder="/home/e3business/public_html/token2.e3business.com/tokenlite" accessType="SFTP" host="88.135.73.58" port="22" sshConfigId="2a9df6bd-72a7-4622-b9cd-3e491dddf75c" sshConfig="root@88.135.73.58:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

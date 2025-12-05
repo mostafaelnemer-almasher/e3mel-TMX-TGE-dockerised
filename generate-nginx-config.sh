@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Get PROJECT_NAME from environment or use jamid as default
-PROJECT_NAME=${PROJECT_NAME:-jamid}
+# Get PROJECT_NAME from environment or use hcola as default
+PROJECT_NAME=${PROJECT_NAME:-hcola}
 
 # Generate nginx config with correct container name
 cat > ./docker/nginx/tokenlite.conf << EOF
