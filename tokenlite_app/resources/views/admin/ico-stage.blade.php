@@ -29,7 +29,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="stage-list">
-                    <div class="tab-pane fade show active " id="activeStage"> 
+                    <div class="tab-pane fade show active " id="activeStage">
                         <div class="gaps-1-5x"></div>
                         <div class="row guttar-vr-30px">
                             @forelse($stages as $stage)
@@ -41,7 +41,7 @@
                                 <div class="stage-item stage-card {{(gws('actived_stage') == $stage->id)?'stage-item-actived':'' }}">
                                     <div class="stage-head">
                                         <div class="stage-title">
-                                            <h6>Stage Name 
+                                            <h6>Stage Name </h6>
                                             @if($today_date->gte($start_date) && $today_date->lte($end_date) && gws('actived_stage') == $stage->id && $stage->status != 'paused')
                                             <span class="badge badge-success">Running</span>
                                             @elseif($today_date->gte($start_date) && $today_date->lte($end_date) && $stage->status == 'paused')
@@ -55,9 +55,12 @@
                                             @else
                                             <span class="badge badge-danger">Expired</span>
                                             @endif
+                                            @if($stage->stage_type=='next')
+                                            <span class="badge badge-info">Next</span>
+                                            @endif
                                             <h4>{{$stage->name}}</h4>
                                         </div>
-                                        
+
                                         <div class="stage-action">
                                             <a href="#" class="toggle-tigger rotate"><em class="ti ti-more-alt"></em></a>
                                             <div class="toggle-class dropdown-content dropdown-content-top-left">
@@ -164,8 +167,8 @@
                                 <div class="stage-item stage-card">
                                     <div class="stage-head">
                                         <div class="stage-title">
-                                            <h6>Stage Name 
-                                            @if($stage->status == 'archived') 
+                                            <h6>Stage Name
+                                            @if($stage->status == 'archived')
                                             <span class="badge badge-light">Archived</span>
                                             @endif
                                             <h4>{{$stage->name}}</h4>

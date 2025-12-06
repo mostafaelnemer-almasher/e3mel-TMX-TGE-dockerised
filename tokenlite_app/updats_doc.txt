@@ -1,0 +1,16 @@
+//for make project work local i add code in getDomain function
+ if (app()->environment('local')) {
+     $host = 'e3-token.e3-blockraise.com';
+}
+it will be work when use the local environment check .env file and change the APP_ENV to local
+
+
+
+//first task for add selector in update stage
+
+run this query in db
+ALTER TABLE `ico_stages` ADD `stage_type` ENUM('current','next') NOT NULL DEFAULT 'current' AFTER `id`;
+
+
+i update ico-stage-edit.blade.php file  to add selector
+

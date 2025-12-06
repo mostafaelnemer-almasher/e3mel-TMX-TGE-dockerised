@@ -216,7 +216,7 @@ class IcoController extends Controller
             'min_purchase'   => 'required|numeric|min:1|lt:total_tokens',
             'max_purchase'   => ['required', 'numeric', 'min:5', 'lt:total_tokens', (is_null($request->min_purchase)) ? '' : 'gt:min_purchase'],
             'soft_cap'   => 'nullable|numeric|min:1|lt:total_tokens',
-            'hard_cap'   => ['nullable', 'numeric', 'min:5', 'lt:total_tokens', (is_null($request->soft_cap)) ? '' : 'gt:soft_cap'],            
+            'hard_cap'   => ['nullable', 'numeric', 'min:5', 'lt:total_tokens', (is_null($request->soft_cap)) ? '' : 'gt:soft_cap'],
             'start_date'   => 'required|date_format:"m/d/Y"|date',
             'end_date'     => 'required|date_format:"m/d/Y"|date|after:start_date',
         ], [
@@ -233,7 +233,7 @@ class IcoController extends Controller
 
             $ret['msg'] = 'warning';
             $ret['message'] = $msg;
-            
+
             return response()->json($ret);
         } else {
             $start_time = ($request->input('start_time')) ? $request->input('start_time') : def_datetime('time');
@@ -271,19 +271,19 @@ class IcoController extends Controller
 
                 $ret['msg'] = 'success';
                 $ret['message'] = __('messages.create.success', ['what' => 'ICO Stage']);
-            } 
+            }
             else {
                 $ret['msg'] = 'warning';
                 $ret['message'] = __('messages.create.failed', ['what' => 'ICO Stage']);
             }
         }
-            
+
         if ($request->ajax()) {
             return response()->json($ret);
         }
-            
+
         return back()->with([$ret['msg'] => $ret['message']]);
-            
+
     }
 
     private function price_bonus_meta ($which)
@@ -335,7 +335,7 @@ class IcoController extends Controller
                 ],
             ],
         ];
-       
+
         if ($which == 'price') {
             return json_encode($prices);
         }
@@ -361,6 +361,7 @@ class IcoController extends Controller
         # Validation
         $validator = Validator::make($request->all(), [
             'name'        => 'required|min:3',
+            'stage_type'        => 'required',
             'start_date'   => 'required|date_format:"m/d/Y"|date',
             'end_date'     => 'required|date_format:"m/d/Y"|date|after:start_date',
             'base_price'   => ['required', 'numeric', 'gt:0', 'regex:/^\d+(\.\d{1,8})?$/'],
@@ -373,6 +374,8 @@ class IcoController extends Controller
         ], [
             'base_price.regex' => __('Allow only :num digit after decimal point in :label. Recommended to use up-to 6 digit after decimal point.', ['label' => __("Base Price"), 'num' => '8']),
         ]);
+
+
         if ($validator->fails()) {
             $msg = '';
             if ($validator->errors()->hasAny(['name', 'start_date', 'end_date', 'total_tokens', 'base_price', 'display_mode', 'min_purchase', 'max_purchase', 'soft_cap', 'hard_cap'])) {
@@ -387,6 +390,15 @@ class IcoController extends Controller
         } else {
             $id = $request->input('ico_id');
             $ico = IcoStage::find($id);
+            $checkStage=IcoStage::where('stage_type','next');
+            if($ico){
+                $checkStage=$checkStage->where('id','!=',$ico->id);
+        }
+            if($checkStage->count()){
+                $ret['msg'] = 'warning';
+                $ret['message'] = 'There are other stage is selected as next stage please change it first to current and try to update this stage again';
+                return response()->json($ret);
+            }
             if ($ico == null) {
                 $ico = new IcoStage();
             }
@@ -401,6 +413,7 @@ class IcoController extends Controller
                 $end_date = _date2sz($re_end_date.' '.$re_end_time, 'Y-m-d H:i:s');
                 // Update or Create
                 $ico->name              = $request->input('name');
+                $ico->stage_type              = $request->input('stage_type');
                 $ico->start_date        = $start_date;
                 $ico->end_date          = $end_date;
                 $ico->total_tokens      = (double)$request->input('total_tokens'); // Disable to change total tokens, to change need to deep more.

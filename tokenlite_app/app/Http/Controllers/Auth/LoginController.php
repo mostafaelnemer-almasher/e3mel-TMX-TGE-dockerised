@@ -166,8 +166,7 @@ class LoginController extends Controller
     protected function authenticated()
     {
         $user = Auth::user();
-        $check=true;
-//        $check = str_contains(app_key(), $this->handler->find_the_path($this->handler->getDomain())) && $this->handler->cris_cros($this->handler->getDomain(), app_key(2));
+        $check = str_contains(app_key(), $this->handler->find_the_path($this->handler->getDomain())) && $this->handler->cris_cros($this->handler->getDomain(), app_key(2));
         if (!$user->is('admin') && !$check) {
             Auth::logout();
             return redirect()->route('login')->with([
