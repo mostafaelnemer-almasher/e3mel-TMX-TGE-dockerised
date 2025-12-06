@@ -1274,7 +1274,10 @@ if (!function_exists('next_price')) {
     function next_price()
     {
         $next_price=0.012;
-        $stage=IcoStage::where('status','!=','deleted')->where('stage_type','next')->first();
+        $stage=IcoStage::where('status','!=','deleted')->where('start_date', '>', Carbon::now())
+        ->orderBy('start_date', 'asc')
+        ->orderBy('id', 'asc')
+        ->first();
         if($stage){
             $next_price=$stage->base_price;
         }

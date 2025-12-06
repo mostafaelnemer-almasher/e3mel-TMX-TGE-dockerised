@@ -361,7 +361,7 @@ class IcoController extends Controller
         # Validation
         $validator = Validator::make($request->all(), [
             'name'        => 'required|min:3',
-            'stage_type'        => 'required',
+//            'stage_type'        => 'required',
             'start_date'   => 'required|date_format:"m/d/Y"|date',
             'end_date'     => 'required|date_format:"m/d/Y"|date|after:start_date',
             'base_price'   => ['required', 'numeric', 'gt:0', 'regex:/^\d+(\.\d{1,8})?$/'],
@@ -413,7 +413,7 @@ class IcoController extends Controller
                 $end_date = _date2sz($re_end_date.' '.$re_end_time, 'Y-m-d H:i:s');
                 // Update or Create
                 $ico->name              = $request->input('name');
-                $ico->stage_type              = $request->input('stage_type');
+//                $ico->stage_type              = $request->input('stage_type');
                 $ico->start_date        = $start_date;
                 $ico->end_date          = $end_date;
                 $ico->total_tokens      = (double)$request->input('total_tokens'); // Disable to change total tokens, to change need to deep more.

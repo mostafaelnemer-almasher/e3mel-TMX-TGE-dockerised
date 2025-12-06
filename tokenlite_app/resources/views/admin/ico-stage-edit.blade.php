@@ -82,20 +82,20 @@
                                     <input class="input-bordered" type="text" name="name" value="{{ $ico->name }}" required>
                                 </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="input-item input-with-label">
-                                            <label class="input-item-label">Stage Type</label>
-                                            <div class="input-wrap">
-                                                <select class="input-bordered"  name="stage_type" required  >
-                                                    <option @if($ico->stage_type=='current') selected @endif value="current">Current Stage</option>
-                                                    <option @if($ico->stage_type=='next') selected @endif value="next">Next Stage</option>
-                                                </select>
-                                            </div>
-                                            <span class="input-note">For select if stage is next for show in next stage price</span>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-12">--}}
+{{--                                        <div class="input-item input-with-label">--}}
+{{--                                            <label class="input-item-label">Stage Type</label>--}}
+{{--                                            <div class="input-wrap">--}}
+{{--                                                <select class="input-bordered"  name="stage_type" required  >--}}
+{{--                                                    <option @if($ico->stage_type=='current') selected @endif value="current">Current Stage</option>--}}
+{{--                                                    <option @if($ico->stage_type=='next') selected @endif value="next">Next Stage</option>--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
+{{--                                            <span class="input-note">For select if stage is next for show in next stage price</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-item input-with-label">

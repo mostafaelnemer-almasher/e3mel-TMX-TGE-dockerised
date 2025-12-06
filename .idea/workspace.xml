@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32422ae5-7dda-427d-8921-4b002684d7ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tokenlite_app/sql_query_updates.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokenlite_app/updats_doc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="32422ae5-7dda-427d-8921-4b002684d7ed" name="Default Changelist" comment="- make condition for work local&#10;- next price stage">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenlite_app/app/Helpers/IcoHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/app/Helpers/IcoHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tokenlite_app/app/Helpers/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/app/Helpers/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenlite_app/app/Http/Controllers/APIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/app/Http/Controllers/APIController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tokenlite_app/app/Http/Controllers/Admin/IcoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/app/Http/Controllers/Admin/IcoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokenlite_app/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tokenlite_app/resources/views/admin/ico-stage-edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/resources/views/admin/ico-stage-edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tokenlite_app/resources/views/admin/ico-stage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/tokenlite_app/resources/views/admin/ico-stage.blade.php" afterDir="false" />
     </list>
@@ -200,8 +195,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1765042131427</updated>
-      <workItem from="1765042136846" duration="5698000" />
+      <workItem from="1765042136846" duration="8021000" />
     </task>
+    <task id="LOCAL-00001" summary="- make condition for work local&#10;- next price stage">
+      <created>1765048222267</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765048222267</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,5 +220,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- make condition for work local&#10;- next price stage" />
+    <option name="LAST_COMMIT_MESSAGE" value="- make condition for work local&#10;- next price stage" />
   </component>
 </project>

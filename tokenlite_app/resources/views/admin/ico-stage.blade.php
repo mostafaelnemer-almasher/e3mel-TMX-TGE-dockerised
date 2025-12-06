@@ -55,9 +55,9 @@
                                             @else
                                             <span class="badge badge-danger">Expired</span>
                                             @endif
-                                            @if($stage->stage_type=='next')
-                                            <span class="badge badge-info">Next</span>
-                                            @endif
+{{--                                            @if($stage->stage_type=='next')--}}
+{{--                                            <span class="badge badge-info">Next</span>--}}
+{{--                                            @endif--}}
                                             <h4>{{$stage->name}}</h4>
                                         </div>
 
